@@ -1,22 +1,16 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import { Container } from "@material-ui/core";
-import Icon from "@material-ui/core/Icon";
-import { withStyles, ThemeProvider } from "@material-ui/styles";
+import { ThemeProvider } from "@material-ui/styles";
+import { withStyles, Container } from "@material-ui/core";
 import styles from "./style";
 import theme from "./../../commons/themes/themes";
+import Taskboard from "../Taskboard";
 
 class App extends Component {
   render() {
-    let { classes } = this.props;
-    console.log("classes :", classes);
-    console.log('theme :', theme);
     return (
       <ThemeProvider theme={theme}>
-        <Container fixed className={classes.firt}>
-          <Button variant="contained" color="primary">
-            <Icon>add_circle</Icon>&nbsp;Thêm công việc mới
-          </Button>
+        <Container>
+          <Taskboard/>
         </Container>
       </ThemeProvider>
     );
