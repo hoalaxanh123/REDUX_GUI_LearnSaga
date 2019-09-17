@@ -8,9 +8,10 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/styles";
 import styles from "./style";
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import Fab from '@material-ui/core/Fab';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 export class TaskItem extends Component {
   render() {
     let { task } = this.props;
@@ -28,15 +29,14 @@ export class TaskItem extends Component {
                 {task.des}
               </Typography>
             </CardContent>
-            
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" >
-              <AssignmentIcon/>
-            </Button>
-            <Button size="small" color="primary">
-              <DeleteForeverIcon/>
-            </Button>
+            <Fab color="primary" aria-label="edit" size='small'>
+              <EditIcon />
+            </Fab>
+            <Fab color="secondary" aria-label="edit" size='small'>
+              <DeleteIcon />
+            </Fab>
           </CardActions>
         </Card>
       </Grid>
