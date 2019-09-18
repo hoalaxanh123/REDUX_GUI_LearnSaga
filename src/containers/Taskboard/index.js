@@ -5,22 +5,9 @@ import { TaskList } from '../../components/TaskList'
 import TaskForm from '../../components/TaskForm'
 import { STATUS } from './../../constants/'
 import { Grid } from '@material-ui/core'
-
-const listTask = () => {
-  let result = []
-  for (let index = 1; index < 5; index++) {
-    let obj = {
-      id: index,
-      title: 'Task ' + index,
-      des:
-        'The Auto-layout makes the items equitably share the available space. That also means you can set the width of one item and the others will automatically resize around it. ' +
-        index,
-      status: Math.floor(Math.random() * 3)
-    }
-    result.push(obj)
-  }
-  return result
-}
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as taskAction from './../../actions/task'
 
 export class Taskborad extends Component {
   constructor(props) {
@@ -45,20 +32,47 @@ export class Taskborad extends Component {
     })
     return result
   }
+  componentDidMount() {
+    // this.props.taskActionCreator.fetchGetList()
+  }
 
   render() {
     let lstStatus = STATUS.sort((a, b) => a.status_code > b.status_code)
+    let { listTask } = this.props
+    listTask = [
+      {
+        id: 1,
+        name: 's',
+        des: 'des',
+        status: 1
+      }
+    ]
+    console.log('listTask :', listTask)
     return (
       <Fragment>
         <TaskForm
           isOpening={this.state.isOpening}
           productEditing={this.state.productEditing}
         />
-
         <Grid container>{this.showTitleList(lstStatus)}</Grid>
-        <TaskList listTask={listTask()} />
+        <TaskList listTask={listTask} />
       </Fragment>
     )
   }
 }
-export default withStyles(styles)(Taskborad)
+const mapDispatchToProps = dispatch => {
+  return {
+    taskActionCreator: bindActionCreators(taskAction, dispatch)
+  }
+}
+const mapStateToProps = state => {
+  return {
+    listTask: state.task.listTask
+  }
+}
+export default withStyles(styles)(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Taskborad)
+)

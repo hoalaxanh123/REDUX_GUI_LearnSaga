@@ -1,5 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import rootReducer from './../reducers'
+import thunk from 'redux-thunk'
 
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
@@ -11,7 +12,7 @@ const composeEnhancers =
     : compose
 
 const configureStore = () => {
-  const middlewares = []
+  const middlewares = [thunk] //logger, saga
   const enhancers = [applyMiddleware(...middlewares)]
   const store = createStore(rootReducer, composeEnhancers(...enhancers))
   return store
