@@ -1,10 +1,10 @@
 const styles = themes => {
   // console.log("themes_TASKBOARD :", themes);
   return {
-    Taskboard:{
+    Taskboard: {
       marginTop: '20px'
     },
-    shape:themes.shape
+    shape: themes.shape
   }
-};
-export default styles;
+}
+export default styles
