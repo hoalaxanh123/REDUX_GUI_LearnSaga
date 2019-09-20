@@ -6,7 +6,7 @@ import theme from './../../commons/themes/themes'
 import Taskboard from '../Taskboard'
 import { Provider } from 'react-redux'
 import configureStore from './../../redux/configStore'
-
+import { Spinner } from './../../components/Spinner'
 const store = configureStore()
 
 class App extends Component {
@@ -16,6 +16,7 @@ class App extends Component {
         <ThemeProvider theme={theme}>
           <Container>
             <Taskboard />
+            <Spinner />
           </Container>
         </ThemeProvider>
       </Provider>

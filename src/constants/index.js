@@ -1,4 +1,4 @@
-export const API_ENPOIN = 'http://5d7c86986b8ef80014b29b21.mockapi.io/1510289/'
+export const API_ENDPOIN = 'http://5d7c86986b8ef80014b29b21.mockapi.io/1510289/'
 //Map Status
 export const STATUS = [
   {

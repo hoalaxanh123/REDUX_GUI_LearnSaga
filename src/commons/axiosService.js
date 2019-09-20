@@ -17,6 +17,9 @@ class AxiosService {
   get(url) {
     return this.intance.get(url)
   }
+  delete(url) {
+    return this.intance.delete(url)
+  }
 }
 export default new AxiosService()
 //

@@ -4,7 +4,10 @@ const styles = themes => {
     Taskboard: {
       marginTop: '20px'
     },
-    shape: themes.shape
+    shape: themes.shape,
+    button: {
+      marginLeft: '5px'
+    }
   }
 }
 export default styles
