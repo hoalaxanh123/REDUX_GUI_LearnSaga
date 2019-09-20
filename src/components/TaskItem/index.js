@@ -11,7 +11,7 @@ import styles from './style'
 import Fab from '@material-ui/core/Fab'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
-export class TaskItem extends Component {
+class TaskItem extends Component {
   render() {
     let { task } = this.props
     return (
@@ -21,7 +21,7 @@ export class TaskItem extends Component {
             <CardMedia image="tiger.jpg" title="Contemplative Reptile" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {task.title}-{task.status}
+                {task.name}-{task.status}
               </Typography>
               <hr />
               <Typography variant="body2" color="textSecondary" component="p">

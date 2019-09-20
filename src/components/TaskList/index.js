@@ -3,9 +3,9 @@ import { withStyles } from '@material-ui/styles'
 import styles from './style'
 import { Grid } from '@material-ui/core'
 import { STATUS } from './../../constants/'
-import { TaskItem } from '../TaskItem'
+import TaskItem from './../TaskItem'
 
-export class TaskList extends Component {
+class TaskList extends Component {
   render() {
     let { listTask } = this.props
     let lstStatus = STATUS.sort((a, b) => a.status_code > b.status_code)
@@ -30,7 +30,7 @@ export class TaskList extends Component {
     let showTaskByStatusCode = statusCode => {
       let lst = listTask.filter(x => x.status === statusCode)
       return lst.map((task, index) => {
-        return <TaskItem key={index} task={task}></TaskItem>
+        return <TaskItem key={index} task={task} />
       })
     }
     return (
