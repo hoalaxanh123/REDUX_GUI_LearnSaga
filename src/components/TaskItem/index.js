@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
-import { Grid } from '@material-ui/core'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Card from '@material-ui/core/Card'
+import {
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Card,
+  Grid,
+  Fab
+} from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/styles'
 import styles from './style'
-import Fab from '@material-ui/core/Fab'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as taskAction from './../../actions/task'
-import { STATUS } from './../../constants'
+// import { STATUS } from './../../constants'
 
 class TaskItem extends Component {
   onDelete = id => {
